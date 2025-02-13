@@ -2,7 +2,30 @@ use region::Protection;
 use retour::static_detour;
 use std::mem::transmute;
 
+#[cfg(target_os = "windows")]
+use winapi::um::wincon::SetConsoleTextAttribute;
+
+#[cfg(target_os = "windows")]
+use winapi::um::processenv::GetStdHandle;
+#[cfg(target_os = "windows")]
+use winapi::um::winbase::STD_OUTPUT_HANDLE;
+#[cfg(target_os = "windows")]
+use winapi::um::handleapi::INVALID_HANDLE_VALUE;
+#[cfg(target_os = "windows")]
+use winapi::um::winnt::HANDLE;
+
 use crate::match_instruction_pattern;
+use log::{info, warn, error};
+
+#[cfg(target_os = "windows")]
+fn set_console_color(color: u16) {
+    unsafe {
+        let handle: HANDLE = GetStdHandle(STD_OUTPUT_HANDLE);
+        if handle != INVALID_HANDLE_VALUE {
+            SetConsoleTextAttribute(handle, color);
+        }
+    }
+}
 
 const REGBIN_CHECK_FLAG_SETTER_PATTERN: &str = concat!(
     // MOV RAX, qword ptr [RBX+0x8]
@@ -24,10 +47,24 @@ const REGBIN_CHECK_FLAG_SETTER_PATTERN: &str = concat!(
 );
 
 pub fn hook() {
+    env_logger::init();
+
     let safety_flag_initializer_va = match_instruction_pattern(REGBIN_CHECK_FLAG_SETTER_PATTERN)
         .map(|m| m.captures.first().map(|c| c.location as *mut u8))
         .flatten()
         .expect("Could not find the regbin check flag setter");
+
+    #[cfg(target_os = "windows")]
+    {
+        set_console_color(0x02); // Set text color to green
+        info!("\n\n\tAttached DLL for Auto Arc\n\n");
+        set_console_color(0x07); // Reset text color to default
+    }
+
+    #[cfg(not(target_os = "windows"))]
+    {
+        info!("Attached DLL for Auto Arc");
+    }
 
     unsafe {
         region::protect(safety_flag_initializer_va, 1, Protection::READ_WRITE_EXECUTE)

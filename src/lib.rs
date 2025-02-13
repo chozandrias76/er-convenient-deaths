@@ -4,13 +4,14 @@ mod regulation;
 
 use std::slice;
 
-use broadsword::{dll, runtime, scanner};
+use broadsword::{dll, runtime, scanner, logging};
 
 #[dll::entrypoint]
 pub fn entry(_: usize) -> bool {
-    broadsword::logging::init("alt-saves.log");
+    logging::init("auto-arc.log");
     file::hook();
     regulation::hook();
+    log::info!("AutoArc loading complete.");
     true
 }
 
