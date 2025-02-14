@@ -14,8 +14,8 @@ use winapi::um::handleapi::INVALID_HANDLE_VALUE;
 #[cfg(target_os = "windows")]
 use winapi::um::winnt::HANDLE;
 
-use crate::match_instruction_pattern;
-use log::{info, warn, error};
+use crate::util::match_instruction_pattern;
+use log::info;
 
 #[cfg(target_os = "windows")]
 fn set_console_color(color: u16) {
@@ -47,10 +47,8 @@ const REGBIN_CHECK_FLAG_SETTER_PATTERN: &str = concat!(
 );
 
 pub fn hook() {
-    env_logger::init();
-
     let safety_flag_initializer_va = match_instruction_pattern(REGBIN_CHECK_FLAG_SETTER_PATTERN)
-        .map(|m| m.captures.first().map(|c| c.location as *mut u8))
+        .map(|m: crate::util::PatternResult| m.captures.first().map(|c: &crate::util::PatternCapture| c.location as *mut u8))
         .flatten()
         .expect("Could not find the regbin check flag setter");
 
