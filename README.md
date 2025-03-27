@@ -13,7 +13,7 @@ Intended for offline user only.
   - [Usage](#usage)
 - [For Developers](#for-developers)
   - [Building from Source](#building-from-source)
-  - [Contributing](#contributing)
+- [Credits](#credits)
 
 ---
 
@@ -41,24 +41,33 @@ Intended for offline user only.
 
 ## For Developers
 
+This program heavily relies on offsets identified in reverse engineering Elden Ring v1.16 and their instructions.
+
 ### Building from Source
 
 1. Install Rust:
    - Follow the instructions at [rust-lang.org](https://www.rust-lang.org/tools/install).
 2. Install the Rust nightly toolchain:
-   ```sh
-   rustup install nightly
-   rustup default nightly
-   ```
+```sh
+rustup install nightly
+rustup default nightly
+```
 3. Clone the project
-   ```sh
-   git clone https://github.com/your-repo/eldenring-convenient-deaths.git ./eldenring-convenient-deaths
-   cd eldenring-convenient-deaths
-   ```
-
+```sh
+git clone https://github.com/your-repo/eldenring-convenient-deaths.git ./eldenring-convenient-deaths
+cd eldenring-convenient-deaths
+```
 4. Build the project
-  ```sh
-  cargo build
-  ```
+```sh
+cargo build
+```
+5. Check `./target/debug` folder for `er_convenient_deaths.dll`
 
-5. Check ./target/debug folder for `er_convenient_deaths.dll`
+## Credits
+
+<p align="left" style="display: flex; justify-content: space-between">
+    <a href="https://github.com/vswarte" ><img src="https://avatars.githubusercontent.com/u/6827387?v=4" alt="Description" width="100"></br>Chainfailure</a>
+    <a href="https://github.com/FeeeeK" ><img src="https://avatars.githubusercontent.com/u/26704473?v=4" alt="Description" width="100"></br>Aъ</a>
+    <a href="https://github.com/ImAxel0" ><img src="https://avatars.githubusercontent.com/u/124681710?v=4" alt="Description" width="100"></br>Axel0</a>
+    <a href="https://github.com/techiew" ><img src="https://avatars.githubusercontent.com/u/22145177?v=4" alt="Description" width="100"></br>Techiew</a>
+</p>
