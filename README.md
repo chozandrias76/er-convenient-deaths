@@ -66,8 +66,8 @@ cargo build
 ## Credits
 
 <p align="left" style="display: flex; justify-content: space-between">
-    <a href="https://github.com/vswarte" ><img src="https://avatars.githubusercontent.com/u/6827387?v=4" alt="Description" width="100"></br>Chainfailure</a>
-    <a href="https://github.com/FeeeeK" ><img src="https://avatars.githubusercontent.com/u/26704473?v=4" alt="Description" width="100"></br>Aъ</a>
-    <a href="https://github.com/ImAxel0" ><img src="https://avatars.githubusercontent.com/u/124681710?v=4" alt="Description" width="100"></br>Axel0</a>
-    <a href="https://github.com/techiew" ><img src="https://avatars.githubusercontent.com/u/22145177?v=4" alt="Description" width="100"></br>Techiew</a>
+    <a href="https://github.com/vswarte" ><img src="https://avatars.githubusercontent.com/u/6827387?v=4" alt="Description" width="100"></br>Chainfailure</br></a>
+    <a href="https://github.com/FeeeeK" ><img src="https://avatars.githubusercontent.com/u/26704473?v=4" alt="Description" width="100"></br>Aъ</br></a>
+    <a href="https://github.com/ImAxel0" ><img src="https://avatars.githubusercontent.com/u/124681710?v=4" alt="Description" width="100"></br>Axel0</br></a>
+    <a href="https://github.com/techiew" ><img src="https://avatars.githubusercontent.com/u/22145177?v=4" alt="Description" width="100"></br>Techiew</br></a>
 </p>
