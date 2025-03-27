@@ -1,5 +1,10 @@
 # Elden Ring Convenient Deaths
-
+<p align="center" style="margin-bottom: 5rem">
+  <a href="./readme.md">
+    <img alt="Elden Ring Splash Screen Skipper Logo" src="./logo.svg" alt="ER Skip Startup Cutscenes Logo" width="250">
+    
+  </a>
+</p>
 A tool to enhance the gameplay experience of Elden Ring by providing convenient death-related features.
 Intended for offline user only.
 
