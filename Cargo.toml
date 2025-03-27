@@ -3,6 +3,21 @@ name = "eldenring-auto-arc"
 version = "0.1.0"
 edition = "2021"
 
+[dependencies]
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tracing-panic = "0.1"
+tracing-appender = "0.2.3"
+crash-handler = "0.6"
+serde = {version = "1.0.219", features = ["derive"] }
+pelite = "0.10.0"
+eldenring = "0.5.1"
+eldenring-util = "0.5.1"
+
+[workspace.dependencies.tracing-tracy]
+version = "0.11.3"
+features = ["enable"]
+
 [lib]
 crate-type = ["cdylib"]
 
@@ -10,24 +25,5 @@ crate-type = ["cdylib"]
 strip = true
 lto = true
 codegen-units = 1
+panic = "abort"
 opt-level = "z"
-
-[dependencies]
-log = "0.4.1"
-serde = { version = "1.0.160", features = ["derive"] }
-toml = "0.7.2"
-broadsword = { git = "https://github.com/vswarte/broadsword.git" }
-region = "3.0.2"
-winapi = "0.3.9"
-practice-tool-tasks = { "git" = "https://github.com/veeenu/practice-tool-core" }
-libeldenring = { path = "D:\\Elden Ring Tools\\eldenring-practice-tool-main\\lib\\libeldenring" }
-
-[dependencies.windows]
-version = "0.48.0"
-
-[dependencies.retour]
-version = "0.3"
-features = ["static-detour"]
-
-[patch.crates-io]
-libudis86-sys = { git = 'https://github.com/vars1ty/libudis86-sys.git' }
