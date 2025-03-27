@@ -28,8 +28,8 @@ Intended for offline user only.
 ### Installation
 
 1. Download the latest release from the [Releases](https://github.com/chozandrias76/er-convenient-deaths/releases) page.
-2. Extract the downloaded archive to your Elden Ring installation directory.
-3. Ensure the `er_convenient_deaths.dll` file is placed in the correct folder.
+2. Extract the downloaded archive to your dll mods folder within the Elden Ring installation directory.
+3. Use [LazyLoader](https://www.nexusmods.com/darksouls3/mods/677) or some other Fromsoft compatable DLL injector to inject the DLL when you start up the game.
 
 ### Usage
 
