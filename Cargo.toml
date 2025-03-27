@@ -1,18 +1,17 @@
 [package]
-name = "eldenring-auto-arc"
+name = "eldenring_convenient_deaths"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 tracing = "0.1"
 tracing-subscriber = "0.3"
-tracing-panic = "0.1"
-tracing-appender = "0.2.3"
 crash-handler = "0.6"
-serde = {version = "1.0.219", features = ["derive"] }
 pelite = "0.10.0"
 eldenring = "0.5.1"
 eldenring-util = "0.5.1"
+serde = {version = "1.0.219", features = ["derive"] }
+toml = "0.8.20"
 
 [workspace.dependencies.tracing-tracy]
 version = "0.11.3"
