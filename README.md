@@ -27,15 +27,22 @@ Intended for offline user only.
 
 ### Installation
 
-1. Download the latest release from the [Releases](https://github.com/chozandrias76/eldenring-convenient-deaths/releases) page.
+1. Download the latest release from the [Releases](https://github.com/chozandrias76/er-convenient-deaths/releases) page.
 2. Extract the downloaded archive to your Elden Ring installation directory.
-3. Ensure the `er_convenient_deaths` file is placed in the correct folder.
+3. Ensure the `er_convenient_deaths.dll` file is placed in the correct folder.
 
 ### Usage
 
 1. Launch Elden Ring.
 2. The tool will automatically activate upon death.
-3. To configure options, edit the `config.json` file located in the same directory as the `.dll`.
+3. To configure options, edit the `er_convenient_deaths.toml` file located in the same directory as the `eldenring.exe`.
+4. ⚠️❗The configuration file created with the DLL disables every feature by default.❗⚠️ 
+You must update the corresponding values to `true` to enable. For example:
+```toml
+keep_runes_on_death = true
+keep_rune_arc_on_death = true
+quicker_deaths = true
+```
 
 ---
 
@@ -54,7 +61,7 @@ rustup default nightly
 ```
 3. Clone the project
 ```sh
-git clone https://github.com/your-repo/eldenring-convenient-deaths.git ./eldenring-convenient-deaths
+git clone https://github.com/chozandrias76/er-convenient-deaths.git ./eldenring-convenient-deaths
 cd eldenring-convenient-deaths
 ```
 4. Build the project
